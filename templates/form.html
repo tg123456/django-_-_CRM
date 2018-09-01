@@ -1,0 +1,15 @@
+<form method="post" action="" novalidate class="form-horizontal">
+    {% csrf_token %}
+    {% for field in from %}
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="">{{ field.label }}</label>
+            <div class="col-sm-3">{{ field }}</div>
+            <span class="error" style="color: red">{{ field.errors.0 }}</span>
+        </div>
+    {% endfor %}
+    <div class="col-sm-3 col-sm-offset-2">
+        <button class="btn btn-success"><a href="{{index_url}}" style="text-decoration: none;color: white">取消</a></button>
+        <input class="btn btn-success" type="submit" value="确定">
+    </div>
+
+</form>
